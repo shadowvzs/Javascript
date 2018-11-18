@@ -38,7 +38,8 @@ main();
 // 2) Mix with await & Promise.all - get both result
 
 (async function getResult() { 
-	console.log(await Promise.all([getName(), getAge]))
+	const [name, age] = await Promise.all([getName(), getAge()]);
+	console.log(name, age)
 })();
 
 //----------------------------------------
