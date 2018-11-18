@@ -4,6 +4,8 @@
 // new Promise(function(resolve, reject) { 
 //     //do something and use resolve(something) or reject(something) callbacks 
 // });
+// Note: reject is acctually a normal error, so .catch is same like catch 
+// in try-catch, also you can use either throw '...', reject('...'), Error('...')
 
 
 // 1) Execute async functions in order, catch error, do something in both case

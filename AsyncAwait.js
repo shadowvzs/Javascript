@@ -44,6 +44,8 @@ main();
 //----------------------------------------
 
 // 3) We use same example but we want catch the rejects if exist
+// not, since reject is acctualy is javascript error, so you can use:
+// throw 'bla', reject('bla'), Error('bla'), it is same result
 
 async function main() {
 	try {
