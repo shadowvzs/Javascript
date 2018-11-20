@@ -48,6 +48,9 @@ const obj = {
     }
 }
 
+// for of use obj.next().value 
+// Basically for of can iterate any iteratable object;
+// iterator.next() return {value, done}
 
 for (const c of obj) {
     console.log(c)

@@ -1,0 +1,53 @@
+__proto__ vs prototype
+
+__proto__: 
+http://jstype.herokuapp.com/#/home
+
+is the actual object that is used in the lookup chain to resolve methods. 
+It is a property that all objects have. 
+This is the property which is used by the JavaScript engine for inheritance
+
+Primitives
+"asa" => String
+1 => Number
+true => Boolean
+
+Other Primitives
+null, undefined, symbol
+
+a = function (){} => Function => Object => null
+a = [1]; => Array => Object => null
+a = {}; => Function => Object => null
+a = new Object(); => Object => null
+a = new Date(...); => Date => Object => null
+a = new Error(...); => Error => Object => null
+a = new RegEx(...); => RegEx => Object => null
+a = new String(...) => String => Object => null
+a = new Number(...) => Number => Object => null
+a = new Boolean(...) => Boolean => Object => null
+
+
+prototype: 
+https://i.stack.imgur.com/KFzI3.png
+
+prototype is a property belonging only to functions. 
+It is used to build __proto__ when the function happens 
+to be used as a constructor with the <i>new</i> keyword.
+It is blueprint for proto and it is an Function object property.
+
+
+Practice:
+https://i.stack.imgur.com/yt3hb.png
+
+function Point(x, y) {
+    this.x = x;
+    this.y = y;
+}
+
+var myPoint = new Point();
+
+// the following are all true
+myPoint.__proto__ == Point.prototype
+myPoint.__proto__.__proto__ == Object.prototype
+myPoint instanceof Point;
+myPoint instanceof Object;
