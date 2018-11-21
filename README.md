@@ -18,3 +18,6 @@
 ## Iterator
  * Custom Iterator & for of
 
+## Data Structure & Data Type
+ * Symbol
+ * Set, Map, WeakSet, WeakMap
