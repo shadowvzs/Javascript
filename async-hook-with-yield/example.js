@@ -9,7 +9,7 @@
         }
 */
 
-async function asyncFunc(resolve) {
+function asyncFunc(resolve) {
     ajax('https://jsonplaceholder.typicode.com/todos', resolve);
 }
 
