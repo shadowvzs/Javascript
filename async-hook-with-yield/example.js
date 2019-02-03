@@ -23,6 +23,7 @@ const asyncHook = new AsyncHook(asyncFunc, initFunc);
 
 asyncHook.add(rawData => JSON.parse(rawData))
          .add(data => data.find( item => item.id == 2 ))
-         .add(item => rootDiv.textContent += 'data [title from id:2]: '+item.title)
-         .add((item, initData) => rootDiv.textContent += ' - this takes: '+(Date.now()-initData)+ 'ms')
-         .add(() => document.body.classList.remove("wait"));
+         .add(item => item.title )
+         .add(title => { rootDiv.textContent += 'data [title from id:2]: '+ title} )
+         .add((item, initData) => { rootDiv.textContent += ' - this takes: '+(Date.now()-initData)+ 'ms'} )
+         .add(() => { document.body.classList.remove("wait") } );

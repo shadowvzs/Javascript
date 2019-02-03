@@ -1,6 +1,6 @@
 function AsyncHook(asyncFunc, initFunc = null) {
         let result = null,
-                initData = null;
+            initData = null;
         const cb = [];
 
         initFunc && (initData = initFunc());
@@ -11,9 +11,11 @@ function AsyncHook(asyncFunc, initFunc = null) {
             // pass result to every registered callback
             cb.forEach( c => {
                 const cbResult = c(result, initData);
-                    cbResult && (result = cbResult);
-                }
-            );
+                // changes was made here
+                cbResult && (result = cbResult);
+                // only logger
+                cbResult && console.log('time', Date.now(), 'result state: ', result);
+            });
             // just test, this is will be the last
             return result;
         };
